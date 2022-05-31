@@ -1,7 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,600;0,700;1,300;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,300;0,400;0,600;0,800;1,300;1,800&family=Roboto+Mono:wght@700&display=swap');
+
+
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+
+}
+
+img{
+    border-radius: 50%;
+    margin: 10px;
+    object-position: left;
+    max-width: 70px;
+}
+
+.container{
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
 .btn  {
-    float: none;
+    font-weight: 600;
+    font-family: 'Karla', sans-serif;
+    padding: 15px;
     position: relative;
-    align-content: center;
-    right: -50px;
-    bottom: -100px;
+    text-align: center;
+}
+
+
+.section-wave {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #ffb5b5;
+    overflow: hidden;
+}
+
+.section-wave .wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(/assets/bluewave.png);
+    background-size: 1000px 100px;
+    -webkit-filter: hue-rotate(100deg);
+        filter: hue-rotate(100deg);
+}
+
+.section-wave .wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 1000;
+    opacity: 1;
+    animation-delay: 0s;
+    bottom: 0;
+}
+
+.section-wave .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 999;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 10px;
+}
+
+.section-wave .wave.wave3 {
+    animation: animate 30s linear infinite;
+    z-index: 998;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 15px;
+}
+
+.section-wave .wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 997;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 20px;
+}
+
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 1000px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -1000px;
+    }
 }
