@@ -39,7 +39,7 @@ img{
 .section-wave {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background: #ffb5b5;
     overflow: hidden;
 }
@@ -50,7 +50,7 @@ img{
     left: 0;
     width: 100%;
     height: 100px;
-    background: url(/assets/bluewave.png);
+    background: url(../assets/bluewave.png);
     background-size: 1000px 100px;
     -webkit-filter: hue-rotate(100deg);
         filter: hue-rotate(100deg);
