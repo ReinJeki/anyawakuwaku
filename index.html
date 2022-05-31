@@ -8,12 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="btn" onclick="audio.play()">Waku-Waku</button>
+    <input type="button" value="Waku-Waku" class="btn" onclick="playAudio()"></input>
 
     <script type="text/javascript">
-        const audio = new Audio();
+        var clicks = 0;
+        function playAudio(){
+            clicks++;
+        var audio = new Audio();
         audio.src = "waku-waku-anya-sound.mp3";
-
+        audio.play();  
+        }
+        
 
 
     </script>
