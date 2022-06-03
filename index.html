@@ -7,6 +7,7 @@
     <title>Waku-Waku</title>
     <link rel="shortcut icon" href="assets/me-icon.png" />
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     
@@ -14,12 +15,28 @@
         <a target="_blank" href="https://twitter.com/spyfamily_anime?s=20&t=DB3M1EmaodxWcaO_M9Wisg"><img alt="anya" src="assets/anya-smug.jpg"></a>
 
         <div class="container">
-            
-            <div class="btn-input">
-                <button type="button" class="btn" onclick="playAudio()"> Waku-Waku </button>
+            <div>
+            <h5> Spy.....Korosia....</h5>
+                <div class="btn-input">
+                    <button type="button" class="btn" onclick="playAudio()"> Waku-Waku </button>
+                </div>
             </div>
-
+                <div class="btn-input">
+                    <button type="button" class="btn" onclick="playAudio2()"> Bakudan </button>
+                </div>
+                
+                <div class="btn-input">
+                    <button type="button" class="btn" onclick="playAudio3()"> Suki </button>
+                </div>
+                 
+                <div class="btn-song">
+                    <audio id="anya-song" controls>
+                        <source src="assets/anya-song.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
             
+                
+                
                 <div class="wave wave1"></div>
                 <div class="wave wave2"></div>
                 <div class="wave wave3"></div>
@@ -36,15 +53,43 @@
     
 
     <script type="text/javascript">
+        
         var clicks = 0;
         function playAudio(){
-            clicks++;
+        clicks++;
         var audio = new Audio();
         audio.src = "assets/waku-waku-anya-sound.mp3";
         audio.play();  
-        }
+        };
+
+        function playAudio2() {
+            clicks++;
+            var audio2 = new Audio();
+            audio2.src = "assets/bakudan-anya.mp3";
+            audio2.volume=0.6;
+            audio2.play();
+                
+        };    
+        function playAudio3() {
+            clicks++;
+            var audio3 = new Audio();
+            audio3.src = "assets/anya-peanuts.mp3";
+            audio3.volume=0.5;
+            audio3.play();
+                
+        };
+
         
 
+        //particles
+        $('.partic').click(function(){
+            if(!$('.partic').parent().hasClass('active')){
+                $(this).parent().stop().addClass('active');
+                setTimeout(function(){
+                    $('.partic').parent().removeClass('active');
+                },2000);
+            }
+        })
 
     </script>
 

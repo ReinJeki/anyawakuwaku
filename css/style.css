@@ -17,7 +17,7 @@ img{
 }
 
 .container{
-    
+     flex-direction: column;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -25,6 +25,12 @@ img{
 
 
 .btn  {
+    text-decoration: none;
+    margin: 10px;
+    color: white;
+    background: rgb(199, 60, 147);
+    background: linear-gradient(45deg, rgba(199, 60, 147, 1) 0%, rgba(255, 117, 117, 1) 100%);
+    font-size: 18px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
@@ -33,8 +39,29 @@ img{
     padding: 15px;
     position: relative;
     text-align: center;
+    
 }
 
+.btn-input {
+    transition: all 0.08s linear;
+}
+
+
+.btn-input:active{
+    transform: scale(0.9);
+    font-size: 15px;
+}
+
+audio::-webkit-media-controls-panel {
+
+    background-color: rgb(233, 104, 175);
+}
+audio::-webkit-media-controls-volume-slider {
+    background-color: white;
+    border-radius: 25px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
 .section-wave {
     position: relative;
@@ -107,4 +134,41 @@ img{
     100% {
         background-position-x: -1000px;
     }
+}
+
+.partic {
+    position: relative;
+}
+
+.partic .perticles-circle {
+    position: absolute;
+    background-color: rgba(255, 117, 117, 1);
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    top: 10px;
+    left: 50px;
+    z-index: -1;
+    border-radius: 50%;
+    transform: scale(0);
+}
+
+.partic .perticles-circle:nth-of-type(odd) {
+    border: solid 2px rgba(255, 117, 117, 1);
+    background-color: transparent;
+}
+
+@keyframes particles-1{
+    from{
+        transform: scale(1);
+
+    }
+    to {
+        left: 247px;
+        top: 75px;
+    }
+}
+
+.active .partic .perticles-circle:nth-of-type(1){
+    animation: particles-1 1.5s 0.025s;
 }
