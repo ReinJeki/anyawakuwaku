@@ -12,31 +12,59 @@
 <body>
     
     <div class="section-wave">
-        <a target="_blank" href="https://twitter.com/spyfamily_anime?s=20&t=DB3M1EmaodxWcaO_M9Wisg"><img alt="anya" src="assets/anya-smug.jpg"></a>
+        <div class="tittlec">
+        <a target="_blank" href="https://twitter.com/spyfamily_anime?s=20&t=DB3M1EmaodxWcaO_M9Wisg"><img alt="anya" class="img" src="assets/anya-smug.jpg"></a>
+        <p>Anya Forger Sound</p>
+        
+    </div>
+        
 
-        <div class="container">
-            <div>
-            <h5> Spy.....Korosia....</h5>
+        
+    <div class="container">
+        <img class="imganya" src="assets/anyas.jpg">
+            <div class="group">
+                <h5> Spy.....Korosia.....</h5>
                 <div class="btn-input">
                     <button type="button" class="btn" onclick="playAudio()"> Waku-Waku </button>
                 </div>
             </div>
+
+            <div class="group">
+                <h5> Ba-ba-ba-ba-</h5>
                 <div class="btn-input">
                     <button type="button" class="btn" onclick="playAudio2()"> Bakudan </button>
                 </div>
-                
+            </div>
+
+            <div class="group">
+                <h5> What is Anya's favorite food?</h5>
                 <div class="btn-input">
-                    <button type="button" class="btn" onclick="playAudio3()"> Suki </button>
+                    <button type="button" class="btn" onclick="playAudio3()"> Peanuts </button>
                 </div>
-                 
+            </div>  
+              
+            <div class="group"><h5 id="counted"> Clicks</h5></div>
+
+            
+            <div class="group">
+                <h5 class="songh1">Anya Song</h5>
+                <p class="songp">By <a href="https://www.youtube.com/channel/UCnTB8uNxND40iwvPiyzpnWw" target="_blank">- Heiakim</a></p>
                 <div class="btn-song">
-                    <audio id="anya-song" controls>
+                    <audio id="anya-song counted" controls>
                         <source src="assets/anya-song.mp3" type="audio/mpeg">
                     </audio>
                 </div>
+            </div>
+            <div class="socialmedia">
+                <a target="_blank" href="https://www.instagram.com/rein.jeki/"><img class="socialimg" alt="tiktok"
+                        src="assets/insta.png"></a>
+                <a target="_blank" href="https://www.tiktok.com/@reinjeki"><img class="socialimg" alt="tiktok"
+                        src="assets/tiktok.png"></a>
             
+            </div>
                 
-                
+
+
                 <div class="wave wave1"></div>
                 <div class="wave wave2"></div>
                 <div class="wave wave3"></div>
@@ -53,12 +81,24 @@
     
 
     <script type="text/javascript">
+
+
+        window.onload = function() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api.countapi.xyz/hit/reinjeki.github.io/visits/");
+        xhr.responseType = "json";
+        xhr.onload = function() {
+        document.getElementById("global").innerHTML = this.response.value;
+};
+        xhr.send();
+  }
         
         var clicks = 0;
         function playAudio(){
         clicks++;
         var audio = new Audio();
         audio.src = "assets/waku-waku-anya-sound.mp3";
+        document.getElementById("counted").innerText=clicks;
         audio.play();  
         };
 
@@ -67,6 +107,8 @@
             var audio2 = new Audio();
             audio2.src = "assets/bakudan-anya.mp3";
             audio2.volume=0.6;
+            document.getElementById("counted").innerText = clicks;
+
             audio2.play();
                 
         };    
@@ -75,6 +117,8 @@
             var audio3 = new Audio();
             audio3.src = "assets/anya-peanuts.mp3";
             audio3.volume=0.5;
+            document.getElementById("counted").innerText = clicks;
+
             audio3.play();
                 
         };
