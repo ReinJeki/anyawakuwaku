@@ -98,19 +98,25 @@ a{
     text-decoration: none;
     
 }
+
+.lol{
+    margin-top: 10px;
+}
 .gaypeople{
     display: flex;
     flex-direction: row;
     z-index: 1005;
 }
 .gayimg {
+    margin: 10px;
     max-width: 100%;
     max-height: 150px;
     display: flex;
 }
 .gayimg1 {
+    margin: 10px;
     max-width: 100%;
-    max-height: 250px;
+    max-height: 200px;
     display: flex;
 }
 
